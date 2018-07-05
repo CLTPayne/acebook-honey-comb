@@ -9,7 +9,7 @@ CREATE TABLE posts (
 CREATE TABLE users (
   id bigserial PRIMARY KEY,
   firstname varchar(50) NOT NULL,
-  lastname varchar(50) NOT NULL,
+  lastname varchar(50) NOT NULL
 );
 
 
