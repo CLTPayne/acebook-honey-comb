@@ -3,6 +3,7 @@ package com.makersacademy.acebook.model;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
+import jdk.incubator.http.*;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.containsString;
@@ -13,20 +14,22 @@ public class PostFeatureTest {
     @Test
     public void userPostIsStoredInDatabase() {
 
-        HttpResponse<JsonNode> jsonResponse = Unirest.post("http://localhost:8080/posts")
-                .header("accept", "application/json")
-                // do we have the token in the query string? Do we need a test token here
-                .queryString("apiKey", "123")
-
+        // the request for making a post
+        HttpRequest<JsonNode> request = Unirest.post("http://localhost:8080/posts")
+                //Accept- informs the server about the types of data that can be sent back
+                .header("Accept", "application/json")
+                .header(("Content-Type","application/json")
+                .header("token","token")
                 .field("content", "Test Message")
-                // do we need to have any extra fields?
-                .field("foo", "bar")
                 .asJson();
 
-//    Unirest.shutdown();
+        // retrieve the parsed JSONObject from the response
+        JSONObject myObj = request.getBody().getObject();
 
+        HttpResponse<JsonNode> response = Unirest.get("http://localhost:8080/posts")
+                .header("Cookie","cookie")
+                .asJson();
 
-        assertThat(post.getContent(), containsString("hello"));
     }
 
 }
