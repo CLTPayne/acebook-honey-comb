@@ -6,8 +6,8 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class PostTest {
-
-	private Post post = new Post("hello", 1L);
+	Long user_id = 1l;
+	private Post post = new Post("hello", user_id);
 
 	@Test
 	public void postHasContent() {
