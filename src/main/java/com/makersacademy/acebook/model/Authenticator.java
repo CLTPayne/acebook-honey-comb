@@ -21,6 +21,14 @@ public class Authenticator {
         }
         return false;
     }
+
+    public static Long returnIdFromToken(UserRepository userRepository, String token){
+        User user = userRepository.findByToken(token);
+        if(user == null){
+            return null;
+        }
+        return user.getId();
+    }
 }
 
 
