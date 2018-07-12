@@ -42,7 +42,7 @@ class SignIn extends React.Component {
           }).then(function(data) {
             console.log('Created Gist:', data);
             document.cookie = "ACKL_token="+data.message;
-            history.push('/signup')
+            history.push('/')
           });
 
      }
@@ -56,7 +56,6 @@ class SignIn extends React.Component {
                 <input type="text" placeholder="Password" name="password" value={this.state.password} onChange={this.handleChange}/>
                 <input type="submit" value="Submit"/>
             </form>
-            What sup Khie.
             <SignUp />
         </div>
        );

@@ -25,7 +25,7 @@ class AddPost extends React.Component {
                   content : this.state.content
         }
         $.ajax({
-                  url: "http://localhost:8080/api/posts",
+                  url: "http://localhost:8080/posts",
                   type: "POST",
                   data: JSON.stringify(data),
                   contentType:"application/json"
