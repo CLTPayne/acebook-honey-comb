@@ -6,11 +6,9 @@ function getCookie(cookieName){
     var decodedcookie = decodeURIComponent(document.cookie);
     var tokenindex = decodedcookie.indexOf(cookieName+"=");
     var aftertokenindex = decodedcookie.slice(tokenindex);
-    if(aftertokenindex.indexOf(';')){
-        return aftertokenindex.slice(aftertokenindex.indexOf('=') + 1, aftertokenindex.indexOf(';'))
-    }else{
-        return aftertokenindex.slice(aftertokenindex.indexOf('=') + 1);
-    }}
+    var array = aftertokenindex.split("=");
+    return array[1]
+    }
 
 export { getCookie }
 
