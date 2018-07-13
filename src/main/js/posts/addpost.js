@@ -38,13 +38,25 @@ class AddPost extends React.Component {
 
     render() {
         return(
-            <form id="post" onSubmit={this.handleSubmit}>
-                <label>
-                    Content
-                    <textarea placeholder="Type your post here..." type="text" name="content" value={this.state.content} onChange={this.handleChange}/>
-                </label>
-                <input type="submit" value="Submit"/>
-            </form>
+            <div className="textarea">
+                <form id="post" className="post" onSubmit={this.handleSubmit}>
+                    <label>
+                        Content
+                        <br/>
+                        <
+                            textarea
+                            rows="10"
+                            cols="50"
+                            placeholder="Type your post here..."
+                            type="text" name="content"
+                            value={this.state.content}
+                            onChange={this.handleChange}
+                        />
+                    </label>
+                    <br/>
+                    <input type="submit" value="Submit"/>
+                </form>
+            </div>
         )
     }
 }
