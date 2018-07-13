@@ -1,6 +1,7 @@
 import React from 'react';
 import Posts from './posts'
 import AddPost from "./addpost"
+import SignOut from "../authentication/signout"
 const client = require('../client');
 
 
@@ -20,6 +21,7 @@ class PostsBuilder extends React.Component {
 		return (
 		<div>
 		    <AddPost />
+		    <SignOut />
             <Posts posts={this.state.posts}/>
         </div>
 		)
