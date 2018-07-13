@@ -4,7 +4,6 @@ import { getCookie } from './getCookie';
 
 (function checkCookie() {
     var cookie = getCookie("ACKL_token");
-    alert(cookie);
     if (cookie) {
         history.push('/')
     } else {
