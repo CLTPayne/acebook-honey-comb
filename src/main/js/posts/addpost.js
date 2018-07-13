@@ -1,12 +1,13 @@
 import React from "react";
 import client from "../client";
+import { getCookie } from "../cookie/getCookie";
 
 class AddPost extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             content: "",
-            token: ""
+            token: getCookie("ACKL_token")
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -24,7 +25,7 @@ class AddPost extends React.Component {
         event.preventDefault();
         let data = {
                   content : this.state.content,
-                  token : "$2a$10$GBSG3lRRYRpfFWz4FP8SgOcVLdcU2h85rVSBIBEmsL19CVOa/dlLi"
+                  token : this.state.token
                   }
 
         $.ajax({
