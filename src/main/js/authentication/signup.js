@@ -44,26 +44,28 @@ class SignUp extends React.Component {
     render() {
         return(
             <form id="form" onSubmit={this.handleSubmit}>
+                <label><h3>Please sign up here:</h3></label>
+                <br/>
                 <label>
                     First Name
                     <input type="text" name ="Firstname" value={this.state.Firstname} onChange={this.handleChange}/>
-                </label>
+                </label><br/>
                  <label>
                     Last Name
                     <input type="text" name ="Lastname"value={this.state.Lastname} onChange={this.handleChange}/>
-                </label>
+                </label><br/>
                  <label>
                     Username
                     <input type="text" name="Username" value={this.state.Username} onChange={this.handleChange}/>
-                </label>
+                </label><br/>
                  <label>
                     Email
                     <input type="text" name="Email" value={this.state.Email} onChange={this.handleChange}/>
-                </label>
+                </label><br/>
                 <label>
                     Password
                     <input type="password" name="Password" value={this.state.Password} onChange={this.handleChange}/>
-                </label>
+                </label><br/>
                 <input type="submit" value="Submit"/>
              </form>
          )
